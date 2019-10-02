@@ -1,0 +1,54 @@
+  
+{
+    "team" : {
+        "id" : "com.example.team",
+        "description" : "Software team of Example.com"
+    },
+    "project" : {
+        "id" : "maiorNota",
+        "description" : "Como mostrar a maior nota dentre os alunos de uma turma",
+        "entities": [
+            {
+                "name": "turma",
+                "labels": {
+                    "sigular": "Turma",
+                    "plural": "Turmas"
+                },
+                "id": "id",
+                "properties": [
+                    {
+                        "name": "aluno",
+                        "label": "Aluno",
+                        "type": "string"
+                    },
+                    {
+                        "name": "disciplina",
+                        "label": "Disciplina",
+                        "type": "string"
+                    },
+                    {
+                        "name": "nota",
+                        "label": "Nota",
+                        "type": "decimal",
+                        "tags": [
+                            "reportMax"
+                        ]
+                    }
+                ]
+        
+            }
+        ],
+        "resources": {
+            "database": {
+                "tags": [
+                    "postgresql"
+                ],
+                "name": "maiorNota",
+                "username": "postgres",
+                "password": "123123",
+                "port": 5432
+            }
+        }
+    }
+}
+  
