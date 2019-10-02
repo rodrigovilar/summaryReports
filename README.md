@@ -9,10 +9,10 @@
 <br/>
 <ul>
   
-<li> Como mostrar a maior nota  dentre os alunos de uma turma? </li>
-<li> Como mostrar a menor nota  dentre os alunos de uma turma? </li>
-<li> omo mostrar o valor médio das compras  já realizadas? </li>
-<li> Como mostrar a contagem de compras já realizadas? </li>
-<li> Como mostrar o somatório dos valores de compras já realizadas? </li>
+<li> <a href="#"> Como mostrar a maior nota  dentre os alunos de uma turma? </a> </li>
+<li> <a href="#"> Como mostrar a menor nota  dentre os alunos de uma turma? </a> </li>
+<li> <a href="#"> omo mostrar o valor médio das compras  já realizadas? </a> </li>
+<li> <a href="#"> Como mostrar a contagem de compras já realizadas? </a> </li>
+<li> <a href="#"> Como mostrar o somatório dos valores de compras já realizadas? </a> </li>
 
  </ul>
