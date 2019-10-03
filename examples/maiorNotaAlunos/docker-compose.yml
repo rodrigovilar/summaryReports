@@ -9,6 +9,8 @@ services:
       POSTGRES_USER: demo
       POSTGRES_PASSWORD: master
       POSTGRES_DB: maiorNota
+    ports:
+      - "5433:5432"
   server:
     build: backend/.
     ports: 
