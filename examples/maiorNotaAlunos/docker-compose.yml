@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:9.5
+    restart: always
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: master
+      POSTGRES_DB: maiorNota
+  server:
+    build: backend/.
+    ports: 
+      - "8080:8080"
+    depends_on:
+      - db
+  client:
+    build: frontend/.
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+
+

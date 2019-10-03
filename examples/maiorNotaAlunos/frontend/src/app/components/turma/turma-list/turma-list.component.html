@@ -1,0 +1,66 @@
+<!-- Turmas -->
+<div class="card">
+  <div class="card-header header-elements-inline">
+    <!-- <h5 class="card-title">{{'user.title.plural' | translate}}</h5> -->
+    <h5 class="card-title">Turmas</h5>
+    <div class="header-elements">
+      <div class="list-icons">
+        <a (click)="listItems()" class="list-icons-item" data-action="reload"></a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="m-0">
+
+  <div class="datatable-header">
+    <!-- <app-simple-search (keySearch)="onSearch($event)"></app-simple-search> -->
+    <app-advanced-search [properties]="searchProperties" (searchSubmit)="onSearch($event)" (keySearch)="onSearch($event)"></app-advanced-search>
+
+    <app-page-size (pageSizeChanged)="setPageSize($event)"></app-page-size>
+  </div>
+
+  <app-spinner [loading]="loading"></app-spinner>
+
+  <table [hidden]="loading" class="table datatable-basic table-striped table-hover dataTable table-hover">
+    <thead>
+      <tr app-sort-header (sortChanged)="onChangeSort($event)">
+        <th sortable="id">Id</th>
+
+        <th>Aluno</th>
+        <th>Disciplina</th>
+        <th>Nota</th>
+
+        <th class="text-center">{{'system.actions' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr align="center" *ngIf="listIsEmpty">
+        <td colspan="100">{{'system.empty-list' | translate}}</td>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td>{{item.id}}</td>
+
+        <td>{{item.aluno}}</td>
+        <td>{{item.disciplina}}</td>
+        <td>{{item.nota}}</td>
+
+        <td class="text-center actions">
+          <button class="btn btn-light text-primary" type="button" (click)="view(item.id, item.id)" app-tooltip tooltip-placement="top" tooltip-value="system.view">
+                            <i class="mdi mdi-visibility"></i>
+                        </button>
+          <button class="btn btn-light" type="button" (click)="edit(item.id)"  app-tooltip tooltip-placement="top" tooltip-value="system.edit">
+                            <i class="mdi mdi-edit"></i>
+                        </button>
+          <button class="btn btn-light btn-delete text-danger" type="button" (click)="remove(item.id)" data-target="#modal-delete-confirmation" data-toggle="modal" app-tooltip tooltip-placement="top" tooltip-value="system.delete">
+                            <i class="mdi mdi-delete"></i>
+                        </button>
+        </td>
+        <app-delete-confirmation (onOK)="delete()"></app-delete-confirmation>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="datatable-footer" [hidden]="loading || listIsEmpty">
+    <app-paginator [totalPages]="totalPages" (pageChanged)="onChangePaginator($event)"></app-paginator>
+  </div>
+</div>
