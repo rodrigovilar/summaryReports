@@ -9,7 +9,7 @@ Dado um sistema de informações, implementado por exemplo em [Angular](frontend
 
 Deseja-se obter um relatório que informe a media das notas dos alunos de cada turma no formato:
 
-id da turma / Disciplina da Turma / Aluno com a nota média / Nota média
+id da turma / Disciplina da Turma / Aluno com a nota média / Nota Média
 
 ## Metadados do exemplo
 
