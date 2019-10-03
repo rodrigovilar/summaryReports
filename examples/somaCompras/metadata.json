@@ -27,8 +27,8 @@
                         "type": "string"
                     },
                     {
-                        "name": "valorTotalSomado",
-                        "label": "ValorTotalSomado",
+                        "name": "valorTotal",
+                        "label": "ValorTotal",
                         "type": "decimal",
                         "tags": [
                             "reportSum"
