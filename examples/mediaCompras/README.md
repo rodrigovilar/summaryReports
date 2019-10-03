@@ -13,7 +13,8 @@ id da turma / Disciplina da Turma / Aluno com a nota média / Nota Média
 
 ## Metadados do exemplo
 
-TO DO
+Os metadados a seguir contêm todos os dados necessários para gerar o código da solução.
+
 
 [Metadata](metadata.json)
 

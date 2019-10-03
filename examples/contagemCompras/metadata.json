@@ -5,33 +5,33 @@
         "description" : "Software team of Example.com"
     },
     "project" : {
-        "id" : "maiorNota",
-        "description" : "Como mostrar a maior nota dentre os alunos de uma turma",
+        "id" : "contagemCompras",
+        "description" : "Como mostrar a contagem de compras de um cliente em uma loja",
         "entities": [
             {
-                "name": "turma",
+                "name": "cliente",
                 "labels": {
-                    "sigular": "Turma",
-                    "plural": "Turmas"
+                    "sigular": "Cliente",
+                    "plural": "Clientes"
                 },
                 "id": "id",
                 "properties": [
                     {
-                        "name": "aluno",
-                        "label": "Aluno",
+                        "name": "cliente",
+                        "label": "Cliente",
                         "type": "string"
                     },
                     {
-                        "name": "disciplina",
-                        "label": "Disciplina",
+                        "name": "loja",
+                        "label": "Loja",
                         "type": "string"
                     },
                     {
-                        "name": "nota",
-                        "label": "Nota",
-                        "type": "decimal",
+                        "name": "quantidadeCompra",
+                        "label": "QuantidadeCompra",
+                        "type": "inteiro",
                         "tags": [
-                            "reportMax"
+                            "reportCount"
                         ]
                     }
                 ]

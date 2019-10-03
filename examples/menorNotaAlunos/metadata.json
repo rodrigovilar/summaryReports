@@ -5,8 +5,8 @@
         "description" : "Software team of Example.com"
     },
     "project" : {
-        "id" : "maiorNota",
-        "description" : "Como mostrar a maior nota dentre os alunos de uma turma",
+        "id" : "menorNota",
+        "description" : "Como mostrar a menor nota dentre os alunos de uma turma",
         "entities": [
             {
                 "name": "turma",
@@ -31,7 +31,7 @@
                         "label": "Nota",
                         "type": "decimal",
                         "tags": [
-                            "reportMax"
+                            "reportMin"
                         ]
                     }
                 ]
@@ -43,7 +43,7 @@
                 "tags": [
                     "postgresql"
                 ],
-                "name": "maiorNota",
+                "name": "menorNota",
                 "username": "postgres",
                 "password": "123123",
                 "port": 5432
