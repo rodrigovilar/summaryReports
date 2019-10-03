@@ -9,10 +9,10 @@
         "description" : "Como mostrar a contagem de compras de um cliente em uma loja",
         "entities": [
             {
-                "name": "cliente",
+                "name": "compra",
                 "labels": {
-                    "sigular": "Cliente",
-                    "plural": "Clientes"
+                    "sigular": "Compra",
+                    "plural": "Compras"
                 },
                 "id": "id",
                 "properties": [
@@ -27,9 +27,9 @@
                         "type": "string"
                     },
                     {
-                        "name": "quantidadeCompra",
-                        "label": "QuantidadeCompra",
-                        "type": "inteiro",
+                        "name": "valorTotal",
+                        "label": "ValorTotal",
+                        "type": "decimal",
                         "tags": [
                             "reportCount"
                         ]
@@ -43,7 +43,7 @@
                 "tags": [
                     "postgresql"
                 ],
-                "name": "maiorNota",
+                "name": "contagemCompras",
                 "username": "postgres",
                 "password": "123123",
                 "port": 5432

@@ -1,15 +1,15 @@
 # Como mostrar o valor médio das compras já realizadas?
 
-Dado um sistema de informações, implementado por exemplo em [Angular](frontend) e [Spring Boot](backend), com um CRUD da entidade Turma, cujos campos são:
+Dado um sistema de informações, implementado por exemplo em [Angular](frontend) e [Spring Boot](backend), com um CRUD da tabela Compra, cujos campos são:
 
-- idTurma: inteiro
-- aluno: texto
-- disciplina: texto
-- nota: decimal
+- idCompra: inteiro
+- cliente: texto
+- loja: texto
+- valorTotal: decimal
 
 Deseja-se obter um relatório que informe a media das notas dos alunos de cada turma no formato:
 
-id da turma / Disciplina da Turma / Aluno com a nota média / Nota Média
+id do cliente / Nome da Loja  / Nome do cliente / Media das compras do cliente
 
 ## Metadados do exemplo
 

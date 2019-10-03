@@ -5,30 +5,30 @@
         "description" : "Software team of Example.com"
     },
     "project" : {
-        "id" : "notaMedia",
-        "description" : "Como mostrar a nota média dentre os alunos de uma turma",
+        "id" : "mediaCompras",
+        "description" : "Como mostrar o valor médio de compras de um cliente em uma loja",
         "entities": [
             {
-                "name": "turma",
+                "name": "compra",
                 "labels": {
-                    "sigular": "Turma",
-                    "plural": "Turmas"
+                    "sigular": "Compra",
+                    "plural": "Compras"
                 },
                 "id": "id",
                 "properties": [
                     {
-                        "name": "aluno",
-                        "label": "Aluno",
+                        "name": "cliente",
+                        "label": "Cliente",
                         "type": "string"
                     },
                     {
-                        "name": "disciplina",
-                        "label": "Disciplina",
+                        "name": "loja",
+                        "label": "Loja",
                         "type": "string"
                     },
                     {
-                        "name": "nota",
-                        "label": "Nota",
+                        "name": "valorMedio",
+                        "label": "ValorMedio",
                         "type": "decimal",
                         "tags": [
                             "reportMedia"
@@ -43,7 +43,7 @@
                 "tags": [
                     "postgresql"
                 ],
-                "name": "notaMedia",
+                "name": "mediaCompras",
                 "username": "postgres",
                 "password": "123123",
                 "port": 5432
@@ -51,4 +51,3 @@
         }
     }
 }
-  

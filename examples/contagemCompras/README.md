@@ -1,11 +1,11 @@
 # Como mostrar a contagem de compras já realizadas?
 
-Dado um sistema de informações, implementado por exemplo em [Angular](frontend) e [Spring Boot](backend), com um CRUD da entidade  cliente, cujos campos são:
+Dado um sistema de informações, implementado por exemplo em [Angular](frontend) e [Spring Boot](backend), com um CRUD da tabela Compra, cujos campos são:
 
-- idCliente: inteiro
+- idCompra: inteiro
 - cliente: texto
 - loja: texto
-- quantidadeCompra: inteiro
+- valorTotal: decimal
 
 Deseja-se obter um relatório que informe a contagem das compras dentre os clientes de uma loja:
 

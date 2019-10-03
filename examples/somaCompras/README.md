@@ -1,15 +1,15 @@
-# Como mostrar o somatório dos valores de compras já realizadas?
+# Como mostrar a soma de valores de compras já realizadas?
 
-Dado um sistema de informações, implementado por exemplo em [Angular](frontend) e [Spring Boot](backend), com um CRUD da entidade Turma, cujos campos são:
+Dado um sistema de informações, implementado por exemplo em [Angular](frontend) e [Spring Boot](backend), com um CRUD da tabela Compra, cujos campos são:
 
-- idCliente: inteiro
+- idCompra: inteiro
 - cliente: texto
 - loja: texto
-- quantidadeCompra: inteiro
+- valorTotalSomado: decimal
 
-Deseja-se obter um relatório que informe a soma das compras dentre os clientes de uma loja:
+Deseja-se obter um relatório que informe a soma dos valores de compras realizadas dentre os clientes de uma loja:
 
-id do cliente / Loja  / Soma do valor das compras do cliente / Soma das compras
+id do cliente / Nome da Loja  / Nome do cliente / Soma das compras do cliente
 
 ## Metadados do exemplo
 

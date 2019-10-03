@@ -5,14 +5,14 @@
         "description" : "Software team of Example.com"
     },
     "project" : {
-        "id" : "somaValoresCompras",
-        "description" : "Como mostrar a mostrar a soma de valores das compras de um cliente em uma loja",
+        "id" : "somarCompras",
+        "description" : "Como mostrar a soma de valores de compras já realizadas de um cliente em uma loja",
         "entities": [
             {
-                "name": "cliente",
+                "name": "compra",
                 "labels": {
-                    "sigular": "Cliente",
-                    "plural": "Clientes"
+                    "sigular": "Compra",
+                    "plural": "Compras"
                 },
                 "id": "id",
                 "properties": [
@@ -27,9 +27,9 @@
                         "type": "string"
                     },
                     {
-                        "name": "quantidadeCompra",
-                        "label": "QuantidadeCompra",
-                        "type": "inteiro",
+                        "name": "valorTotalSomado",
+                        "label": "ValorTotalSomado",
+                        "type": "decimal",
                         "tags": [
                             "reportSum"
                         ]
@@ -43,7 +43,7 @@
                 "tags": [
                     "postgresql"
                 ],
-                "name": "maiorNota",
+                "name": "somarCompras",
                 "username": "postgres",
                 "password": "123123",
                 "port": 5432
