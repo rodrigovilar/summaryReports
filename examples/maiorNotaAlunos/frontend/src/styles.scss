@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+.breadcrumb-line {
+    height: 40px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.actions button {
+    margin: 1px;
+    background-color: transparent;
+    font-size: 25px;
+    margin: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px;
+}
+
+th.th-actions { 
+    width: 100px;
+    padding-right: 30px;
+    padding-left: 30px;  
+}
+
+.btn-crud {
+    width: 100px;
+}

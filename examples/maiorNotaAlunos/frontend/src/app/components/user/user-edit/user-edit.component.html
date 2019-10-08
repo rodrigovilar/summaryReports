@@ -1,0 +1,115 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <!-- Basic layout-->
+    <div class="card">
+      <div class="card-header header-elements-inline">
+        <h5 class="card-title" *ngIf="!item.id">{{'system.register' | translate}} {{'user.title.singular' | translate}}</h5>
+        <h5 class="card-title" *ngIf="item.id">{{'system.update' | translate}} {{'user.title.singular' | translate}}</h5>
+        <div class="header-elements">
+          <div class="list-icons">
+            <!-- <a class="list-icons-item" data-action="collapse"></a>
+                                <a class="list-icons-item" data-action="reload"></a>
+                                <a class="list-icons-item" data-action="remove"></a> -->
+          </div>
+        </div>
+      </div>
+      <hr class="m-0">
+
+      <div class="card-body col-md-6 offset-md-3">
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label">{{'user.name' | translate}}:</label>
+            <div class="col-lg-9">
+              <input type="text" class="form-control" placeholder="{{'user.name' | translate}}" formControlName="name">
+              <app-control-message [control]="editForm.controls.name"></app-control-message>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label">{{'user.username' | translate}}:</label>
+            <div class="col-lg-9">
+              <input type="text" class="form-control" placeholder="{{'user.username' | translate}}" formControlName="username">
+              <app-control-message [control]="editForm.controls.username"></app-control-message>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label">{{'user.role' | translate}}:</label>
+            <div class="col-lg-9">
+
+              <!-- radio button -->
+              <!-- <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input app-button-choose type="radio" value="super-user" class="form-check-input-styled" name="idRole" formControlName="idRole">
+                                            Super User
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input app-button-choose type="radio" value="master" class="form-check-input-styled" name="idRole" formControlName="idRole">
+                                            Master
+                                        </label>
+                                    </div> -->
+
+              <!-- checkbox -->
+              <!-- <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input app-button-choose formControlName="idRole" type="checkbox" class="form-check-input-styled">
+                                            Super User
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input app-button-choose formControlName="idRole" type="checkbox" class="form-check-input-styled">
+                                            Master
+                                        </label>
+                                    </div> -->
+
+              <!-- select multiple -->
+              <!-- <select app-select2 class="form-control multiselect" multiple="multiple" data-fouc [compareWith]="equalsSelect" formControlName="idRole">
+                                        <option value="1" translate>Super User</option>
+                                        <option value="2" translate>Master</option>
+                                    </select> -->
+
+              <!-- select normal -->
+              <select app-select2 [search]="true" class="form-control form-control-select2" [compareWith]="equalsSelect" formControlName="role">
+                                        <option *ngFor="let role of roles" [ngValue]="{id: role.id}" translate>{{role.key}}</option>
+                                    </select>
+              <app-control-message [control]="editForm.controls.role"></app-control-message>
+            </div>
+          </div>
+
+          <div class="form-group row" *ngIf="!isEditMode">
+            <label class="col-lg-3 col-form-label">{{'user.password' | translate}}:</label>
+            <div class="col-lg-9">
+              <input type="password" class="form-control" placeholder="{{'user.password' | translate}}" formControlName="newPassword">
+              <app-control-message *ngIf="!isEditMode" [control]="editForm.controls.newPassword"></app-control-message>
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+									<label>Default select</label>
+									<select class="form-control multiselect" multiple="multiple" data-fouc>
+										<option value="cheese">Cheese</option>
+										<option value="tomatoes">Tomatoes</option>
+										<option value="mozarella">Mozzarella</option>
+										<option value="mushrooms">Mushrooms</option>
+									</select>
+								</div> -->
+
+          <div class="text-right" style="margin-top: 10px">
+            <button (click)="backToList()" type="button" class="btn mr-2">{{'system.back' | translate}}</button>
+            <button type="submit" class="btn btn-info">Enviar</button>
+            <!-- <app-loading-button *ngIf="!item.id" [loading]="loading" [form]="editForm">{{'system.register' | translate}}</app-loading-button>
+                                <app-loading-button *ngIf="item.id" [loading]="loading" [form]="editForm">{{'system.update' | translate}}</app-loading-button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- /basic layout -->
+
+  </div>
+</div>

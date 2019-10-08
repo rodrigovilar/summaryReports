@@ -1,0 +1,69 @@
+<!-- usuários -->
+<div class="card">
+  <div *ngIf="title" class="card-header header-elements-inline">
+    <div>
+      <h5 class="card-title">{{ title | translate }}</h5>
+    </div>
+    <div class="header-elements">
+      <div class="list-icons">
+        <a (click)="listItems()" class="list-icons-item" data-action="reload"></a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="m-0">
+
+  <div *ngIf="searchProperties.length > 0" class="datatable-header">
+    <!-- <app-simple-search (keySearch)="onSearch($event)"></app-simple-search> -->
+    <app-advanced-search [properties]="searchProperties" (searchSubmit)="onSearch($event)" (keySearch)="onSearch($event)"></app-advanced-search>
+
+    <app-page-size (pageSizeChanged)="setPageSize($event)"></app-page-size>
+  </div>
+
+  <app-spinner [loading]="loading"></app-spinner>
+
+  <table [hidden]="loading" class="table datatable-basic table-striped table-hover dataTable table-hover">
+    <thead>
+      <tr app-sort-header (sortChanged)="onChangeSort($event)">
+        <th *ngFor="let column of columns" [attr.sortable]="column.field">
+          {{ column.label | translate }}
+        </th>
+        <th *ngIf="buttons.length > 0 || !hideDefaultButtons">
+          {{ 'system.actions' | translate }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr align="center" *ngIf="listIsEmpty">
+        <td colspan="100">{{'system.empty-list' | translate}}</td>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td *ngFor="let column of columns">
+          {{ column.subFilter ? (item[column.field] ? item[column.field][column.subFilter] : '') : item[column.field] }}
+        </td>
+
+        <td class="text-center actions">
+          <button *ngFor="let button of buttons" type="button" class="btn btn-{{button.color ? button.color : 'info'}}" (click)="button.action(item)">
+                                <i class="fa fa-{{button.icon}}"></i>
+                            </button>
+          <div *ngIf="!hideDefaultButtons" style="display: inline-block">
+            <button class="btn btn-info" type="button" (click)="view(item.id)">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+            <button class="btn btn-success" type="button" (click)="edit(item.id)" *ngxPermissionsOnly="['update-*', 'update-car']">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+            <button class="btn btn-danger btn-delete" type="button" *ngxPermissionsOnly="['delete-*', 'delete-car']" (click)="remove(item.id)" data-target="#modal-delete-confirmation" data-toggle="modal">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+          </div>
+          <app-delete-confirmation (onOK)="delete()"></app-delete-confirmation>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="datatable-footer" [hidden]="loading">
+    <app-paginator [totalPages]="totalPages" (pageChanged)="onChangePaginator($event)"></app-paginator>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<section class="card">
+  <header *ngIf="title" class="card-header bg-white header-elements-inline">
+    <h5 class="card-title" *ngIf="title">{{ title | translate }} </h5>
+  </header>
+  <nav class="bg-light">
+    <ul class="nav nav-tabs nav-tabs-bottom mb-0">
+      <li class="nav-item" *ngFor="let step of steps; let i = index">
+        <a id="step-tab-{{i}}" [ngClass]="{
+                                'incomplete': 
+                                    step.stepControl.touched
+                                    && step.stepControl.invalid,
+                                'active': selectedIndex === i
+                            }" class="nav-link" (click)="onClick(i)">   
+                        {{ !step.label ? 'Step ' + (i + 1) : step.label | translate }}
+                    </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="step-{{selectedIndex}}" class="step-content" [style.display]="selected ? 'block' : 'none'">
+    <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+  </div>
+  <footer class="card-header bg-light header-elements-inline">
+    <a id="stepper-return-link" (click)="onReturn.emit()" class="btn btn-sm btn-link" *ngIf="returnUsed" translate> 
+            system.back
+        </a>
+    <div class="btn-group">
+      <button id="stepper-previous-btn" type="button" class="btn btn-sm" [disabled]="selectedIndex === 0" (click)="previous()" translate>
+                system.previous </button>
+      <button id="stepper-next-btn" type="button" class="btn btn-sm" [disabled]="selectedIndex === steps.length - 1" (click)="next()" translate>
+                system.next </button>
+      <button id="stepper-submit-btn" type="button" class="btn btn-sm btn-info" *ngIf="submitUsed" [disabled]="formGroup && !formGroup.valid" (click)="onSubmit.emit()" translate>
+                system.save </button>
+    </div>
+  </footer>
+</section>

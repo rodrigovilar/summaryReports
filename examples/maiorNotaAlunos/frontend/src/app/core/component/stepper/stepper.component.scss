@@ -1,0 +1,25 @@
+.nav-link {
+    font-weight: 500;
+    color: var(--secondary) !important;
+}
+.nav-link.active:before {
+    background-color: var(--primary);
+}
+.nav-link.active {
+    color: var(--primary) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+.nav-link.incomplete {
+    color: var(--danger) !important;;
+}
+
+footer.card-header {
+    padding: 0.25rem;
+}
+
+.step-content {
+    padding: 1.25rem;
+}
