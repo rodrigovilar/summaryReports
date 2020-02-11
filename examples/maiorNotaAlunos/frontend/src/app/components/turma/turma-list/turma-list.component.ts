@@ -37,5 +37,6 @@ export class turmaListComponent extends BaseListComponent implements OnInit {
       Comparison.Like
     );
     this.addSearch('nota', 'Nota', PropertyType.String, Comparison.Like);
+    this.addSearch('anoConclusao', 'Ano conclusao', PropertyType.String, Comparison.Like);
   }
 }

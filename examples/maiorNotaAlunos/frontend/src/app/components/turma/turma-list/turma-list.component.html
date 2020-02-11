@@ -29,6 +29,7 @@
         <th>Aluno</th>
         <th>Disciplina</th>
         <th>Nota</th>
+        <th>Ano Conclusao</th>
 
         <th class="text-center">{{'system.actions' | translate}}</th>
       </tr>
@@ -43,6 +44,7 @@
         <td>{{item.aluno}}</td>
         <td>{{item.disciplina}}</td>
         <td>{{item.nota}}</td>
+        <td>{{item.anoConclusao}}</td>
 
         <td class="text-center actions">
           <button class="btn btn-light text-primary" type="button" (click)="view(item.id, item.id)" app-tooltip tooltip-placement="top" tooltip-value="system.view">

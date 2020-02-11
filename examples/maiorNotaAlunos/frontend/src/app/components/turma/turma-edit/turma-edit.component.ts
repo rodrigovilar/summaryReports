@@ -29,7 +29,8 @@ export class turmaEditComponent extends BaseEditComponent implements OnInit {
       id: this.formBuilder.control(undefined, []),
       aluno: this.formBuilder.control(undefined, []),
       disciplina: this.formBuilder.control(undefined, []),
-      nota: this.formBuilder.control(undefined, [])
+      nota: this.formBuilder.control(undefined, []),
+      anoConclusao: this.formBuilder.control(undefined, [])
     };
   }
 
